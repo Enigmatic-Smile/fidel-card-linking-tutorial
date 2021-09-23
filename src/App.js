@@ -7,7 +7,16 @@ import Transaction from "./components/Transaction";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-  const headers = ["Amount", "Cashback", "Scheme", "Card", "Brand", "Location", "Status", "Date↓"]
+  const headers = [
+    "Amount",
+    "Cashback",
+    "Scheme",
+    "Card",
+    "Brand",
+    "Location",
+    "Status",
+    "Date↓",
+  ];
 
   useEffect(() => {
     document.getElementById("fidel-form")?.remove();
@@ -52,9 +61,10 @@ function App() {
                 </a>
                 <button
                   onClick={() => window.Fidel?.openForm()}
-                  className="ml-10 w-full bg-blue-700 hover:bg-blue-900 text-white py-2 px-4 rounded">
+                  className="ml-10 w-full bg-blue-700 hover:bg-blue-900 text-white py-2 px-4 rounded"
+                >
                   Add Card
-                  </button>
+                </button>
               </div>
             </div>
             <div className="md:flex flex-col md:flex-row md:-mx-4">
@@ -77,19 +87,25 @@ function App() {
                 </h1>
               </div>
               <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 py-2 lg:-mx-8 pr-10 lg:px-8">
-
                 <div className="align-middle">
                   <table className="min-w-full">
                     <thead>
                       <tr>
-                        {headers.map(header => (
-                          <th className="px-6 py-2 py-3 text-left text-gray-400 font-light text-sm">{header}</th>
+                        {headers.map((header) => (
+                          <th className="px-6 py-2 py-3 text-left text-gray-400 font-light text-sm">
+                            {header}
+                          </th>
                         ))}
                       </tr>
                     </thead>
                     <tbody className="bg-white">
                       {transactions.map(({ transaction, type }, idx) => (
-                        <Transaction key={idx} transaction={transaction} type={type} transactions={transactions} />
+                        <Transaction
+                          key={idx}
+                          transaction={transaction}
+                          type={type}
+                          transactions={transactions}
+                        />
                       ))}
                     </tbody>
                   </table>
@@ -99,7 +115,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 # Sample Application for Building a Card-Linked Application on the Fidel Platform With the Fidel Web SDK
 
 The application in this repository implements:
+
 - a Node.js Server that listens for webhook events coming from Fidel and passes them on to a client via WebSocket.
 - a React Client that receives transactions from the server via a WebSocket, and can link cards using the Fidel Web SDK.
 
@@ -15,7 +16,8 @@ $ git clone git@github.com:FidelLimited/fidel-card-linking-tutorial.git
 ## Requirements
 
 You'll need a few things before you can run this sample application locally:
-- [Node.js](https://nodejs.org/en/) v12.22+.
+
+- [Node.js](https://nodejs.org/en/) v14.x.
 - [ngrok](https://ngrok.com/download) downloaded and installed (it might also ask you to sign up for an account in the process).
 - [A Fidel Account](https://dashboard.fidel.uk/sign-up?ref=github-sample).
 
@@ -47,11 +49,12 @@ First, let's install the project dependencies:
 $ npm install
 ```
 
-Then, we'll need to create an environment file and populate the Fidel SDK Key and the Fidel Demo Program ID. 
+Then, we'll need to create an environment file and populate the Fidel SDK Key and the Fidel Demo Program ID.
 
 ```sh
 $ cp example.env .env
 ```
+
 Add your Fidel SDK key in the newly created `.env` file. You'll find the key in the [Account page of the Fidel Dashboard](https://dashboard.fidel.uk/account/plan). Please use the Test SDK key. It will start with `pk_test_`. The Program ID can be found in the Fidel Dashboard, on the [Programs page](https://dashboard.fidel.uk/programs). Each program has a side menu available, with a "Copy ID" option in the menu.
 
 That's it, you're ready to run the sample application:
